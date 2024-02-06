@@ -4,13 +4,15 @@ import {
   ScrollView,
   Text,
 s} from 'react-native';
+import { MainContainer } from './App.style'
+import Home from './src/screens/Home';
 
 function App(): React.JSX.Element {
   return (
     <SafeAreaView>
-      <ScrollView>
-        <Text>Hello World</Text>
-      </ScrollView>
+      <MainContainer>
+        <Home />
+      </MainContainer>
     </SafeAreaView>
   );
 }
