@@ -1,12 +1,13 @@
 import { useState } from "react"
-import { Text } from "react-native"
-import { getPokemonName } from "../services/fetchPokemon"
+import { Image } from "react-native"
+import { PokemonNameAndMainImage } from "../modules/Pokemon"
+import { getPokemonNameAndMainImage } from "../services/fetchPokemon"
 import { Title, Container, Input, ItemsContainer, Description, InputContainer, CustomButton, ButtonText, Result, PokemonName, ResultDescription, CustomInput, InputMessage } from "./Home.style"
 
 const Home = () => {
     const [pokemonNumber, setPokemonNumber] = useState('')
     const [inputMessage, setInputMessage] = useState('')
-    const [pokemon, setPokemon] = useState<string | null>(null)
+    const [pokemon, setPokemon] = useState<PokemonNameAndMainImage | null>(null)
 
     const onPressButton = async () => {
         setInputMessage('')
@@ -17,8 +18,8 @@ const Home = () => {
                 setInputMessage('Digite um número entre 1 e 900')
                 return
             }
-            const name = await getPokemonName(formattedNumber)
-            if (name) setPokemon(name) 
+            const nameAndImage = await getPokemonNameAndMainImage(formattedNumber)
+            if (nameAndImage) setPokemon(nameAndImage) 
         }
     }
 
@@ -44,7 +45,11 @@ const Home = () => {
             {pokemon && (
                 <Result>
                     <ResultDescription>Seu Pokémon é: </ResultDescription>
-                    <PokemonName>{pokemon}</PokemonName>
+                    <Image 
+                        source={{uri: pokemon.imgUrl}}
+                        style={{width: 200, height: 200}}
+                    />
+                    <PokemonName>{pokemon.name}</PokemonName>
                 </Result>
             )}
         </Container>

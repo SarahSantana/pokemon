@@ -15,6 +15,9 @@ export const Container = styled.View`
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #FF6161;
+    height: 100%;
+    flex: 1;
 `
 
 export const Input = styled.TextInput`
