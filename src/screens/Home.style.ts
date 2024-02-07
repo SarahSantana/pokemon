@@ -14,10 +14,11 @@ export const Title = styled.Text`
 export const Container = styled.View`
     display: flex;
     align-items: center;
+    justify-content: center;
 `
 
 export const Input = styled.TextInput`
-    width: 78%;
+    width: 100%;
     height: 50px;
     color: #3F33FF;
     font-size: 20px;
@@ -53,13 +54,48 @@ export const InputContainer = styled.View`
 export const CustomButton = styled.TouchableOpacity`
     background-color: #3F33FF;
     padding: 10px;
+    box-sizing: border-box;
     border-radius: 5px;
+    height: 50px;
 `;
 
 export const ButtonText = styled.Text`
-    background-color: #3F33FF;
     color: #fff;
     font-weight: bold;
     border-radius: 4px;
     padding: 6px 0;
 `;
+
+export const Result = styled.View`
+    margin-top: 40px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+`;
+
+export const ResultDescription = styled.Text`
+    font-size: 18px;
+    color: #3F33FF;
+    margin-bottom: 3px;
+`;
+
+export const PokemonName = styled.Text`
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #3F33FF;
+`;
+
+export const CustomInput = styled.View`
+    display: flex;
+    width: 78%;
+`;
+
+export const InputMessage = styled.Text`
+    font-size: 15px;
+    color: #FF4040;
+    margin-top: 4px;
+    margin-left: 2px;
+`;
+
+
