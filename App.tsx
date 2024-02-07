@@ -1,9 +1,7 @@
 import React from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  Text,
-s} from 'react-native';
+  SafeAreaView
+} from 'react-native';
 import { MainContainer } from './App.style'
 import Home from './src/screens/Home';
 
